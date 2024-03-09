@@ -14,13 +14,13 @@ router.get("/", (req, res) => {
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// router.get("/:id", (req, res) => {
-//     let id = +req.params.id;
-//     conn.query("select * from movies where movie_id = ?" , [id], (err, result, fields) => {
-//     if (err) throw err;
-//       res.json(result);
-//     });
-//   });
+router.get("/id/:id", (req, res) => {
+    let id = +req.params.id;
+    conn.query("select * from movies where movie_id = ?" , [id], (err, result, fields) => {
+    if (err) throw err;
+      res.json(result);
+    });
+  });
 
   // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
