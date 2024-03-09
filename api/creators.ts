@@ -55,7 +55,7 @@ router.post("/", (req, res) => {
     if (err) throw err;
     res
       .status(201)
-      .json({ affected_row: result.affectedRows, movies_id: result.insertId });
+      .json({ affected_row: result.affectedRows, creators_id: result.insertId });
   });
 });
 
