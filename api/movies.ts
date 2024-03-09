@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
 
     let query1 = "SELECT * FROM movies WHERE title LIKE ?";
     let query2 = "SELECT DISTINCT stars.type as stars_type, person.name as stars_name FROM stars JOIN person ON stars.person_id = person.person_id JOIN movies ON stars.movie_id = movies.movie_id WHERE movies.title LIKE ?";
-    let query3 = "SELECT DISTINCT creators.type as creators_type, person.name as creators_name FROM creators JOIN person ON creators.person_id = person.person_id JOIN movies ON creators.movie_id = movies.movie_id WHERE movies.title LIKE ?";
+    let query3 = "SELECT DISTINCT creators.type as creators_type, creators.name as creators_name FROM creators JOIN person ON creators.person_id = person.person_id JOIN movies ON creators.movie_id = movies.movie_id WHERE movies.title LIKE ?";
 
     let results : any= {};
 
